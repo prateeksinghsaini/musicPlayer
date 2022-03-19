@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-image: url(img/bg.jpg);
+    background-size:cover;
+    text-decoration: none;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3%;
+    height: 610px;
+    width: 400px;
+    position: relative;
+    box-shadow: 0px 0px 100px rgb(0, 0, 0);
+    border-radius: 20px;
+    background-image: url(img/bg.jpg);
+    background-size:cover; 
+    background-position: right;
+}
+.one{
+    padding: 20px;
+    font-size: 30px;
+    display:block;   
+    flex-direction: row;                              
+}
+span{
+    font-family: 'LED Digital 7', sans-serif;
+}
+#Listicon{
+    padding-left:50px;
+    cursor: pointer;
+}
+#playList{
+    position: absolute;
+    height: 300px;
+    width:95%;
+    background-image: url(img/bg.jpg);
+    background-size:cover; 
+    margin-top: 70px;
+    visibility: hidden;
+    z-index: 10;
+    box-shadow: 0 0 100px black;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: Arial;
+}
+#playList::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+  
+#playList::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f5f5f5;
+}
+#playList::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #acb2c5;
+}
+#playList p{
+    padding: 20px 161px ;
+    background-color: #acb2c5;
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.363);
+    margin: 0px;
+    position: fixed;
+    color: white;
+    z-index: 2;
+}
+#songlist{
+    list-style-type: none;
+    padding-top: 70px;
+}
+#songlist li{
+    font-size: 20px;
+    padding: 10px;
+}
+#songlist li a{
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+#playpause{
+    padding-left: 20px;
+}
+.songName{
+    padding-left: 30px;
+}
+#songlist li a:hover{
+    color:white;
+}
+#songlist li:hover{
+    font-size: 25px;
+    background-color: rgba(24, 104, 183, 0.603);
+    color:white;
+    transform:scale(1.05,1.05);
+    margin-left:10px;
+    transition:0.3s;
+    z-index: 1;
+}
+#trackArt{
+    width: 100%;
+    height: 200px;
+    width: 200px;
+    background-image: url(covers/img1.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    animation-name: rotate;
+    animation: rotate 15s infinite linear;
+}
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
+}
+#trackName,
+#artistName{
+    width: 100%;
+    font-family: arial;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: center;
+}
+#trackName{
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+#artistName{
+    font-size: 23px;
+    padding-top: 10px;
+}
+#time{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    padding:20px;
+}
+#currentTime,
+#totalTime
+{
+    padding: 0 10px 0 10px;
+}
+#myProgressBar{
+    width:65%;
+    cursor: pointer;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+}
+#prev,
+#next
+{
+    cursor: pointer;
+    font-size: 50px;
+    padding: 20px;
+}
+#play{
+    cursor: pointer;
+    padding:10px 20px ; 
+    font-size: 70px;
+}
+#shuffle,
+#loop{
+    cursor: pointer;
+    font-size: 30px;
+    padding:30px 10px;
+}
+#vol{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    padding:20px;
+}
+#minus,
+#plus{
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+}
+#myVolumeBar{
+    width:40%;
+    cursor: pointer;
+}
+input[type=range]{
+    -webkit-appearance: none;
+    background: none;
+}
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: #6d7283;
+    height: 12px;
+    width: 40px;
+    border-radius: 10px;
+}
+input[type=range]::-webkit-slider-runnable-track{
+    background-color: rgb(207, 182, 255);
+    border-radius: 10px;
+    box-shadow:inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+#shuffle:hover,
+#loop:hover,
+#prev:hover,
+#next:hover,
+#play:hover,
+#minus:hover,
+#plus:hover{
+    transform: scale(1.1, 1.1);
+    opacity: 0.8;
+}
