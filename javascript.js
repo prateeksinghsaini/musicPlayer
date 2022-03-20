@@ -4,7 +4,7 @@ let trackName = document.querySelector("#trackName");
 let artistName = document.querySelector("#artistName");
 
 let playPause = document.querySelector("#play");
-let prevBtn = document.querySelector("#previous");
+let prevBtn = document.querySelector("#prev");
 let nextBtn = document.querySelector("#next");
 
 let seekSlider = document.querySelector("#myProgressBar");
@@ -115,14 +115,14 @@ let nextSong = () => {
     loadSong(songs[songIndex]);
     playsong();
 };
-/*let prevSong = () => {
-    songIndex = (((songIndex - 1) % songs.length) + songs.length) % songs.length;
+nextBtn.addEventListener("click", nextSong);
+
+let prevSong = () => {
+    songIndex = (songIndex - 1 + songs.length) % songs.length;
     loadSong(songs[songIndex]);
     playsong();
-};*/
-
-nextBtn.addEventListener("click", nextSong);
-nextBtn.addEventListener("click", prevSong);
+};
+prevBtn.addEventListener("click", prevSong);
 
 ////////  auto next /////////////////////////////////////////////////////////
 
