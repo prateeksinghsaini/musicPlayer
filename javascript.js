@@ -8,8 +8,8 @@ let prevBtn = document.querySelector("#prev");
 let nextBtn = document.querySelector("#next");
 
 let seekSlider = document.querySelector("#myProgressBar");
-let currentTime = document.querySelector("#currentTime");
-let totalTime = document.querySelector("#totalTime");
+let displayCurrentTime = document.querySelector("#currentTime");
+let displayTotalTime = document.querySelector("#totalTime");
 
 let volumeSlider = document.querySelector("#myVolumeBar");
 let volumeUp = document.querySelector("#plus");
@@ -17,6 +17,10 @@ let volumedown = document.querySelector("#minus");
 
 let songItems = document.querySelector(".songItem");
 let songName = Array.from(document.querySelector(".songName")); 
+let songsList = document.querySelector("#songlist");
+
+
+trackArt.style.animationPlayState = "paused";
 
 //////// playlistbox //////////////////////////////////////////////////////////
 
@@ -52,13 +56,6 @@ let songs = [
     artistName: "Zayn"}
 ];
 
-let imgIndex = 0;
-let imgs = [
-    "covers/STAY.jpg",
-    "covers/Sunflower.jpg",
-    "covers/BeFoUr.jpg"
-];
-
 let audioElement = new Audio("songs/song1.mp3");
 
 //////// playbutton /////////////////////////////////////////////////////////
@@ -69,11 +66,13 @@ let playsong = function(songs) {
         playPause.classList.remove("fa-play");
         playPause.classList.add("fa-pause");
         document.querySelector("#play").title = "pause";
+        trackArt.style.animationPlayState = "running";
     } else {
         audioElement.pause();
         playPause.classList.remove("fa-pause");
         playPause.classList.add("fa-play");
         document.querySelector("#play").title = "play";
+        trackArt.style.animationPlayState = "paused";
     }
 }
 
@@ -91,12 +90,12 @@ seekSlider.addEventListener("change", ()=>{
 
 //////// voluebar /////////////////////////////////////////////////////////
 
-volumeSlider.addEventListener("mousemove", ()=>{
+volumeSlider.addEventListener("change", ()=>{
     audioElement.volume = volumeSlider.value / 100;
 });
 volumeUp.addEventListener("click", ()=>{
     audioElement.volume = volumeSlider.value + 5;
-
+    
 });
 
 //////// next prev /////////////////////////////////////////////////////////
@@ -106,8 +105,9 @@ let loadSong = (songs) => {
     artistName.textContent = songs.artistName;
     audioElement.src = "songs/" + songs.trackName + ".mp3";
     artistName.textContent = songs.artistName;
-    coverImg.src = "covers/" + songs.trackName + ".jpg";
+    coverImg.src = songs.trackArt;
 };
+
 loadSong(songs[0]);
 
 let nextSong = () => {
@@ -124,11 +124,9 @@ let prevSong = () => {
 };
 prevBtn.addEventListener("click", prevSong);
 
-////////  auto next /////////////////////////////////////////////////////////
+////////  time /////////////////////////////////////////////////////////
 
-/*let autoNext = () => {
-    if(audioElement.currentTime = 100){
-    playPause(),
-    nextSong();
-    }
-}*/
+
+
+////////  playlist /////////////////////////////////////////////////////////
+
