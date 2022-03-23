@@ -87,12 +87,6 @@ let loadSong = (songs) => {
     artistName.textContent = songs.artistName;
     coverImg.src = songs.trackArt;
 
-    
-    setTimeout(() => {
-        seekSlider.max = audioElement.duration;
-        displayTotalTime.innerHTML = formatTime(audioElement.duration);
-    }, 300);
-
 
     setInterval(() => {
         seekSlider.value = audioElement.currentTime;
@@ -103,9 +97,15 @@ let loadSong = (songs) => {
     }, 500);
     
     displayCurrentTime.textContent = audioElement.currentTime;
-    displayTotalTime.textContent = audioElement.duration;
-};
 
+    setTimeout(() => {
+        seekSlider.max = audioElement.duration;
+        displayTotalTime.innerHTML = formatTime(audioElement.duration);
+    }, 300);
+
+    displayTotalTime.textContent = audioElement.duration;
+
+};
 loadSong(songs[0]);
 
 let nextSong = () => {
