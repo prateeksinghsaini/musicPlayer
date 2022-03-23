@@ -91,7 +91,7 @@ let loadSong = (songs) => {
     setTimeout(() => {
         seekSlider.max = audioElement.duration;
         displayTotalTime.innerHTML = formatTime(audioElement.duration);
-    }, 1000);
+    }, 300);
     displayTotalTime.textContent = audioElement.duration;
 
     setInterval(() => {
