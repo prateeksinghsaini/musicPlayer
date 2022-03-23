@@ -20,6 +20,7 @@ let songName = Array.from(document.querySelector(".songName"));
 let songsList = document.querySelector("#songlist");
 
 
+let audioElement = new Audio("songs/song1.mp3");
 trackArt.style.animationPlayState = "paused";
 
 //////// playlistbox //////////////////////////////////////////////////////////
@@ -56,7 +57,6 @@ let songs = [
     artistName: "Zayn"}
 ];
 
-let audioElement = new Audio("songs/song1.mp3");
 
 //////// playbutton /////////////////////////////////////////////////////////
 
@@ -78,35 +78,32 @@ let playsong = function(songs) {
 
 playPause.addEventListener("click", playsong);
 
-///////// progressbar //////////////////////////////////////////////////////
-
-audioElement.addEventListener("timeupdate", ()=>{
-    progress = parseInt((audioElement.currentTime/audioElement.duration)* 100)
-    seekSlider.value = progress;
-});
-seekSlider.addEventListener("change", ()=>{
-    audioElement.currentTime = seekSlider.value * audioElement.duration/100;
-});
-
-//////// voluebar /////////////////////////////////////////////////////////
-
-volumeSlider.addEventListener("change", ()=>{
-    audioElement.volume = volumeSlider.value / 100;
-});
-volumeUp.addEventListener("click", ()=>{
-    audioElement.volume = volumeSlider.value + 5;
-    
-});
-
 //////// next prev /////////////////////////////////////////////////////////
 
 let loadSong = (songs) => {
     trackName.textContent = songs.trackName;
     artistName.textContent = songs.artistName;
-    audioElement.src = "songs/" + songs.trackName + ".mp3";
+    audioElement.src = `songs/${songs.trackName}.mp3`;
     artistName.textContent = songs.artistName;
     coverImg.src = songs.trackArt;
-    displayTotalTime.textContent = parseInt(audioElement.duration);
+
+    
+    setTimeout(() => {
+        seekSlider.max = audioElement.duration;
+        displayTotalTime.innerHTML = formatTime(audioElement.duration);
+    }, 300);
+
+
+    setInterval(() => {
+        seekSlider.value = audioElement.currentTime;
+        displayCurrentTime.innerHTML = formatTime(audioElement.currentTime);
+        if(Math.floor(audioElement.currentTime) == Math.floor(seekSlider.max)){
+            nextBtn.click();
+        }
+    }, 500);
+    
+    displayCurrentTime.textContent = audioElement.currentTime;
+    displayTotalTime.textContent = audioElement.duration;
 };
 
 loadSong(songs[0]);
@@ -125,9 +122,40 @@ let prevSong = () => {
 };
 prevBtn.addEventListener("click", prevSong);
 
+///////// progressbar //////////////////////////////////////////////////////
+
+
+seekSlider.addEventListener("change", ()=>{
+    audioElement.currentTime = seekSlider.value;
+});
+
+//////// voluebar /////////////////////////////////////////////////////////
+
+volumeSlider.addEventListener("change", ()=>{
+    audioElement.volume = volumeSlider.value / 100;
+});
+volumeUp.addEventListener("click", ()=>{
+    audioElement.volume = volumeSlider.value / 100;
+    volumeSlider.value = (audioElement.volume * 100)  + 5;
+});
+volumedown.addEventListener("click", ()=>{
+    audioElement.volume = volumeSlider.value / 100;
+    volumeSlider.value = (audioElement.volume * 100)  - 5;
+});
+
 ////////  time /////////////////////////////////////////////////////////
 
-
+let formatTime = (time) => {
+    let min = Math.floor(time / 60);
+    if(min < 10){
+        min = `0${min}`;
+    }
+    let sec = Math.floor(time % 60);
+    if(sec < 10){
+        sec = `0${sec}`;
+    }
+    return `${min} : ${sec}`;
+}
 
 ////////  playlist /////////////////////////////////////////////////////////
 
