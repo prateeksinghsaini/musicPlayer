@@ -19,6 +19,8 @@ let songItems = document.querySelector(".songItem");
 let songName = Array.from(document.querySelector(".songName")); 
 let songsList = document.querySelector("#songlist");
 
+
+let audioElement = new Audio();
 trackArt.style.animationPlayState = "paused";
 
 //////// playlistbox //////////////////////////////////////////////////////////
