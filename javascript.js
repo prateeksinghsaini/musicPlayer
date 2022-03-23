@@ -106,6 +106,7 @@ let loadSong = (songs) => {
     audioElement.src = "songs/" + songs.trackName + ".mp3";
     artistName.textContent = songs.artistName;
     coverImg.src = songs.trackArt;
+    displayTotalTime.textContent = parseInt(audioElement.duration);
 };
 
 loadSong(songs[0]);
