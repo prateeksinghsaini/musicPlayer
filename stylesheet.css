@@ -232,3 +232,7 @@ input[type=range]::-moz-range-progress{
     transform: scale(1.1, 1.1);
     opacity: 0.8;
 }
+#currentTime,
+#totalTime{
+    font-size: 10px;
+}
