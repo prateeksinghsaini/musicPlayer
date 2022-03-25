@@ -23,20 +23,6 @@ let songsList = document.querySelector("#songlist");
 let audioElement = new Audio();
 trackArt.style.animationPlayState = "paused";
 
-////////  time /////////////////////////////////////////////////////////
-
-let formatTime = (time) => {
-    let min = Math.floor(time / 60);
-    if(min < 10){
-        min = `0${min}`;
-    }
-    let sec = Math.floor(time % 60);
-    if(sec < 10){
-        sec = `0${sec}`;
-    }
-    return `${min} : ${sec}`;
-}
-
 //////// playlistbox //////////////////////////////////////////////////////////
 
 let playlistStatus = false;
@@ -105,7 +91,7 @@ let loadSong = (songs) => {
     setTimeout(() => {
         seekSlider.max = audioElement.duration;
         displayTotalTime.innerHTML = formatTime(audioElement.duration);
-    }, 300);
+    }, 500);
     displayTotalTime.textContent = audioElement.duration;
 
     setInterval(() => {
@@ -155,7 +141,19 @@ volumedown.addEventListener("click", ()=>{
     volumeSlider.value = (audioElement.volume * 100)  - 5;
 });
 
+////////  time /////////////////////////////////////////////////////////
 
+let formatTime = (time) => {
+    let min = Math.floor(time / 60);
+    if(min < 10){
+        min = `0${min}`;
+    }
+    let sec = Math.floor(time % 60);
+    if(sec < 10){
+        sec = `0${sec}`;
+    }
+    return `${min} : ${sec}`;
+}
 
 ////////  playlist /////////////////////////////////////////////////////////
 
