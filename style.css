@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+body{
+    background:rgb(29, 29, 29);
+    font-family: poppins;
+    background-image: url(img/220771-black-music-wallpaper-music-notes-with-black-background.jpg);
+    background-size: cover;
+    background-position: center;
+    scroll-behavior: smooth;
+}
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+}
+.menu{
+    height: 90px;
+    width: 90px;
+    color: white;
+    font-size: 70px;
+    margin-left: 1%;
+    background-color:#161515;
+    z-index: 100;
+    border-radius: 10px;
+    top: 10px;
+}
+#menu{
+    padding-left: 15px;
+}
+.sidenav{
+    height: 105vh;
+    width: 0%;
+    position: fixed;
+    z-index: 1000;
+    background-color: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+#close{
+    color: white;
+    margin-top: 10px;
+    margin-left: 90%;
+    font-size: 80px;
+    visibility: hidden;
+    height: 20px;
+    width: 20px;
+}
+.sidenav img{
+    height: 200px;
+    width: 210px;
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius: 50%;
+    visibility: hidden;
+}
+.sidebrand{
+    font-size:70px;
+    font-family: poppins;
+    padding-left: 40px;
+    padding-top: 90px;
+    position: absolute;
+    visibility: hidden;
+}
+.sidebrand a{
+    color: white;
+}
+.sidenav ul{
+    display:flex;
+    align-items:center;
+    padding-top: 80px;
+    mask-origin: fill-box;
+    font-size: 50px;
+    list-style-type:none;
+    flex-direction: column;
+    line-height: 120px;
+    height:100px;
+    list-style: none;
+    visibility: hidden;
+}
+.sidenav ul li a{
+    color: white;
+}
+nav{
+    font-family:ubuntu;
+    background-color:rgb(12, 9, 9);
+    right:0;
+    top:0;
+    left:0;
+    position: fixed;
+    z-index: 10;
+    visibility: hidden;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    list-style-type:none;
+    height:100px;
+    color:white;
+    list-style: none;
+}
+
+nav ul li{
+    font-size: 35px;
+    padding:0 17px;
+}
+nav ul li a{
+    color: white;
+}
+nav ul li a:hover{
+    color:dimgray;
+}
+.home{
+    padding-left: 35%;
+}
+.brand img{
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    padding-left: 0px;
+    border-radius: 50%;
+}
+
+.brand{
+    font-family:ubuntu;
+    color:white;
+    display:flex;
+    font-weight:bolder;
+    align-items:center;
+    font-size:2.5rem;
+}
+
+@media only screen and (min-width:1000px){
+    .sidenav{
+        visibility: hidden;
+    }
+    .menu{
+        visibility: hidden;
+        height: 0px;
+        width: 0px;
+    }
+    nav{
+        visibility: visible;
+    }
+    nav ul{
+        height:55px;
+    }
+    
+    nav ul li{
+        font-size: 16px;
+        padding:0 12px;
+    }
+    .home{
+        padding-left: 70px;
+    }
+    .brand img{
+        height: 45px;
+        width:45px;
+        padding-left: 0px;
+    }
+    .brand{
+        font-family:ubuntu;
+        color:white;
+        display:flex;
+        font-weight:bolder;
+        align-items:center;
+        font-size:1.3rem;
+    }
+}
+
+.container{
+    background:rgb(22, 21, 21);
+    padding-top: 10px;
+    color:white;
+    height: calc(100vh - 10px);
+    width:100%;
+    left:0;
+    position:relative;
+    overflow:hidden;
+    overflow-y:scroll;
+}
+
+.container::-webkit-scrollbar{
+    visibility: hidden;
+    width: 0px;
+}
+
+
+
+.theimg{
+    width:95%;
+    height:300px;
+    margin: 10px 28px;
+    background-color:white;
+    background-image: url(img/headerphoto.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    border-radius: 10px;
+    background-position: center;
+}
+.theimg p{
+    padding: 80px 100px;
+    font-size: 80px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 70px;
+    text-shadow: 10px 10px 5px rgba(255, 255, 255, 0.145);
+}
+.theimg p:hover{
+    opacity: 0.8;
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.145);
+    transition: 0.4s all linear;
+}
+.theimg p:not(:hover){
+    opacity: 1;
+    text-shadow: 10px 10px 5px rgba(255, 255, 255, 0.145);
+    transition: 0.4s all linear;
+}
+.container h1{
+    position:relative;
+    padding:35px;
+    font-size:60px;
+    color:white;
+}
+.main{
+    background:#161515;
+    position:relative;
+    width:95%;
+    margin:0 auto;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.songbox{
+    max-height:130px;
+    background:rgb(48, 48, 48);
+    position:relative;
+    width:460px;
+    border-radius: 7px;
+    margin-top: 7px;
+}
+.songbox:hover{
+    background:rgb(73, 72, 72);
+    transition: 0.7s;
+}
+.songbox:not(:hover){
+    background:rgb(48, 48, 48);
+    transition: 0.7s;
+}
+.songbox img{
+    border-radius:7px 0px 0px 7px;
+    width:30%;
+    height:100%;
+}
+
+.songbox h5{
+    position:absolute;
+    left:160px;
+    bottom:40px;
+    font-family:'varela',sans-serif;
+    color:white;
+    font-size:2.1rem;
+}
+
+.masterplay{
+    position:absolute;
+    left:400px;
+    top:55px;
+    cursor:pointer;
+    color:rgb(67, 209, 67);
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px black;
+    visibility: hidden;
+}
+.masterplay:hover{
+    transform: scale(1.5, 1.5);
+    color:rgb(97, 206, 97);
+    transition: 0.3s;
+}
+.masterplay:not(:hover){
+    transform: scale(1, 1);
+    color:rgb(67, 209, 67);
+    transition: 0.3s;
+}
+
+.main2{
+    background: #161515;
+    position:relative;
+    width:98%;
+    margin:0 auto;
+    display:flex;
+    flex-flow: row wrap;
+    padding:5px;
+    border-radius: 10px;
+}
+.songbox7,
+.songbox8,
+.songbox9,
+.songbox10{
+    height:640px;
+    background:rgb(47, 47, 48);
+    position:relative;
+    width:452px;
+    border-radius:10px;
+    margin:15px 15px 0px 0px;
+    left: 15px;
+    text-align: center;
+}
+.songbox7:hover,
+.songbox8:hover,
+.songbox9:hover,
+.songbox10:hover{
+    background:rgb(59, 59, 60);
+    transition: 0.7s;
+}
+.songbox7:not(:hover),
+.songbox8:not(:hover),
+.songbox9:not(:hover),
+.songbox10:not(:hover){
+    background:rgb(47, 47, 48);
+    transition: 0.7s;
+}
+.songbox7 img,
+.songbox8 img,
+.songbox9 img,
+.songbox10 img{
+    border-radius:10px;
+    height:68%;
+    position:relative;
+    margin: 7px 9px;
+}
+
+.songbox7 h5,
+.songbox8 h5,
+.songbox9 h5,
+.songbox10 h5{
+    color:white;
+    font-family:'varela',sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 30px;
+}
+.songbox7 h6,
+.songbox8 h6,
+.songbox9 h6,
+.songbox10 h6{
+    color:white;
+    font-family:'varela',sans-serif;
+    font-size:1.8rem;
+    text-align: center;
+    padding-top: 17px;
+}
+.aboutus{
+    padding: 50px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.aboutus h1{
+    font-style: normal;
+}
+.copy{
+    padding-top: 30px;
+    font-size: 12px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.682);
+}
+.copyp{
+    padding-top: 40px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.682);
+    padding-bottom: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (min-width:1000px){
+    .container{
+        padding-top: 55px;
+        height:690px;
+        width:70%;
+        left:15%;
+    }
+    .theimg p{
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .theimg p:hover{
+        opacity: 0.8;
+        text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.145);
+        transition: 0.4s all linear;
+    }
+    .theimg p:not(:hover){
+        opacity: 1;
+        text-shadow: 10px 10px 5px rgba(255, 255, 255, 0.145);
+        transition: 0.4s all linear;
+    }
+    .container h1{
+        padding:35px;
+        font-size: 40px;
+    }
+    .main{
+        width:93%;
+    }
+    
+    .songbox{
+        height:85px;
+        width:310px;
+    }
+    .songbox h5{
+        left:110px;
+        bottom:30px;
+        font-size:1.1rem;
+    }
+    
+    .masterplay{
+        left:260px;
+        top:28px;
+    }
+    
+    .main2{
+        width:93%;
+        padding:10px;
+    }
+    .songbox7,
+    .songbox8,
+    .songbox9,
+    .songbox10{
+        height:320px;
+        width: 226px;
+    }
+    
+    .songbox7 img,
+    .songbox8 img,
+    .songbox9 img,
+    .songbox10 img{
+        height:65%;
+    }
+    
+    .songbox7 h5,
+    .songbox8 h5,
+    .songbox9 h5,
+    .songbox10 h5{
+        font-size:1.5rem;
+        padding-top: 10px;
+    }
+    .songbox7 h6,
+    .songbox8 h6,
+    .songbox9 h6,
+    .songbox10 h6{
+        font-size:0.8rem;
+    }
+    .aboutus{
+        padding: 50px;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-style: italic;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    .copy{
+        padding-top: 30px;
+        font-size: 12px;
+        font-style: normal;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 100;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.682);
+    }
+    .copyp{
+        padding-top: 20px;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 100;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.682);
+        padding-bottom: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}

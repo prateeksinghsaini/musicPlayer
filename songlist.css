@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+}
+body{
+    background:rgb(29, 29, 29);
+    scroll-behavior: smooth;
+    background-image: url(img/220771-black-music-wallpaper-music-notes-with-black-background.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    font-family: poppins;
+    justify-content: center;
+    
+}
+@media only screen and (min-width:1000px){
+    body{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+}
+.menu{
+    color: white;
+    font-size: 27px;
+    margin-left: 3%;
+    margin-top: 10px;
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.sidenav{
+    top: 0px;
+    height: 105vh;
+    width: 0%;
+    position: fixed;
+    font-family: poppins;
+    z-index: 1000;
+    background-color: rgba(64, 224, 208, 0.912);
+    transition: 0.5s;
+}
+#close{
+    color: black;
+    margin-top: 4px;
+    margin-left: 90%;
+    font-size: 35px;
+    visibility: hidden;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.sidenav img{
+    height: 85px;
+    width: 90px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 50%;
+    visibility: hidden;
+}
+.sidebrand{
+    font-size:30px;
+    font-family: poppins;
+    padding-left: 13px;
+    padding-top: 35px;
+    position: absolute;
+    visibility: hidden;
+}
+.sidebrand a{
+    color: black;
+}
+.sidenav ul{
+    display:flex;
+    align-items:center;
+    padding-top: 5px;
+    mask-origin: fill-box;
+    font-size: 23px;
+    list-style-type:none;
+    flex-direction: column;
+    line-height: 45px;
+    list-style: none;
+    visibility: hidden;
+}
+.sidenav ul li a{
+    color: black;
+}
+nav{
+    font-family:ubuntu;
+    background-color:rgb(12, 9, 9);
+    right:0;
+    top:0;
+    left:0;
+    position: fixed;
+    visibility: hidden;
+    z-index: 10;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    list-style-type:none;
+    height:100px;
+    color:white;
+    list-style: none;
+}
+
+nav ul li{
+    font-size: 35px;
+    padding:0 17px;
+}
+nav ul li a{
+    color: white;
+}
+nav ul li a:hover{
+    color:dimgray;
+}
+.home{
+    padding-left: 35%;
+}
+.brand img{
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    padding-left: 0px;
+    border-radius: 50%;
+}
+
+.brand{
+    font-family:ubuntu;
+    color:white;
+    display:flex;
+    font-weight:bolder;
+    align-items:center;
+    font-size:2.5rem;
+}
+
+@media only screen and (min-width:1000px){
+    .sidenav{
+        visibility: hidden;
+    }
+    .menu{
+        visibility: hidden;
+        height: 0px;
+        width: 0px;
+    }
+    nav{
+        visibility: visible;
+    }
+    nav ul{
+        height:55px;
+    }
+    
+    nav ul li{
+        font-size: 16px;
+        padding:0 12px;
+    }
+    .home{
+        padding-left: 70px;
+    }
+    .brand img{
+        height: 45px;
+        width:45px;
+        padding-left: 0px;
+    }
+    .brand{
+        font-family:ubuntu;
+        color:white;
+        display:flex;
+        font-weight:bolder;
+        align-items:center;
+        font-size:1.3rem;
+    }
+    .menu{
+        visibility: hidden;
+    }
+}
+.leftcontainer{
+    background-image: linear-gradient(180deg, rgba(64, 224, 208, 0.401), rgb(21, 21, 21));
+    color:white;
+    height: 20vh;
+    width: 90%;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.leftcontainer::-webkit-scrollbar{
+    width: 0px;
+}
+.songbox{
+    height: 100px;
+    background:rgb(48, 48, 48);
+    position:relative;
+    width: 250px;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+.songbox:hover{
+    background:rgb(73, 72, 72);
+    transition: 0.7s;
+}
+.songbox:not(:hover){
+    background:rgb(48, 48, 48);
+    transition: 0.7s;
+}
+.songbox img{
+    border-radius:7px 0px 0px 7px;
+    width:30%;
+    height: 100%;
+}
+
+.songbox h5{
+    position:absolute;
+    left:90px;
+    bottom: 25px;
+    font-family:'varela',sans-serif;
+    color:white;
+    font-size:1.4rem;
+}
+
+.masterplay{
+    position:absolute;
+    left:280px;
+    top:20px;
+    cursor:pointer;
+    color:rgb(67, 209, 67);
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px black;
+    visibility: visible;
+}
+.masterplay:hover{
+    transform: scale(1.1, 1.1);
+    color:rgb(97, 206, 97);
+    transition: 0.3s;
+}
+.masterplay:not(:hover){
+    transform:  scale(1, 1);;
+    color:rgb(67, 209, 67);
+    transition: 0.3s;
+}
+ 
+@media only screen and (min-width:1000px){
+    .leftcontainer{
+        background-image: linear-gradient(180deg, rgba(64, 224, 208, 0.401), rgb(21, 21, 21));
+        color:white;
+        width:14%;
+        height: 62vh;
+        display: flex;
+        flex-direction: column;
+        font-family:'varela',sans-serif;            
+        float:left;
+        margin: 80px 5px 0px 10px;
+        padding:34px;
+        border-radius: 10px;
+        overflow-y: hidden;
+    }
+    .songbox{
+        height:70px;
+        background:rgb(48, 48, 48);
+        width:210px;
+        border-radius: 7px;
+        margin-top: 10px;
+    }
+    .songbox:hover{
+        background:rgb(73, 72, 72);
+        transition: 0.7s;
+    }
+    .songbox:not(:hover){
+        background:rgb(48, 48, 48);
+        transition: 0.7s;
+    }
+    .songbox img{
+        border-radius:7px 0px 0px 7px;
+        width:30%;
+        height:100%;
+    }
+    
+    .songbox h5{
+        position:absolute;
+        left:70px;
+        bottom:22px;
+        font-family:'varela',sans-serif;
+        color:white;
+        font-size:0.8rem;
+    }
+    
+    .masterplay{
+        position:absolute;
+        left:170px;
+        top:15px;
+        cursor:pointer;
+        color:rgb(67, 209, 67);
+        background-color: black;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px black;
+        visibility: hidden;
+    }
+    .masterplay:hover{
+        transform: scale(1.1, 1.1);
+        color:rgb(97, 206, 97);
+        transition: 0.3s;
+    }
+    .masterplay:not(:hover){
+        transform:  scale(1, 1);;
+        color:rgb(67, 209, 67);
+        transition: 0.3s;
+    }
+}
+
+.container{
+    height: 45vh;
+    width: 90%;
+    padding: 10px;
+    color:white;
+    font-family:'varela',sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin:10px auto;
+    border-radius:10px;
+    background-image: linear-gradient(180deg, rgba(64, 224, 208, 0.401), rgb(21, 21, 21));
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.container::-webkit-scrollbar{
+    width: 0px;
+}
+.musicid{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+}
+
+.container img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+#playlistname{
+    margin-left: 10px;
+    padding-top: 30px;
+    font-size: 39px;
+    line-height: 40px;
+    font-family: Poppins;
+    display: flex;
+    flex-direction: column;
+    text-shadow: 0px 0px 50px white;
+}
+#artistname{
+    font-size: 20px;
+    font-family: Poppins;
+}
+#tracks{
+    font-size: 25px;
+    font-family: poppins;text-align: center;
+    padding-top: 170px;
+}
+.ml{
+    height: auto;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.ml::-webkit-scrollbar{
+    width: 0px;
+}
+.musiclist{
+    list-style: none;
+    padding-top: 20px;
+}
+.musiclist li{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.musiclist li:hover{
+    background-color: rgba(179, 179, 179, 0.189);
+    border-radius: 8px;
+    margin-left: 10px;font-size: 20px;
+    text-shadow: 0px 0px 30px white;
+    transition: 0.5s ease-in-out;
+}
+
+
+@media only screen and (min-width:1000px){
+    .container{
+        height: 510px;
+        width: 70%;
+        padding: 10px;
+        color:white;
+        font-family:'varela',sans-serif;
+        display: flex;
+        flex-direction: column;
+        margin: 80px auto;
+        border-radius:10px;
+        background-image: linear-gradient(180deg, rgba(64, 224, 208, 0.401), rgb(21, 21, 21));
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .container::-webkit-scrollbar{
+        width: 0px;
+    }
+    .musicid{
+        height: 300px;
+        width: 100%;
+        display: flex;
+        position: fixed;
+    }
+    
+    .container img{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        margin-top: 30px;
+        margin-left: 80px;
+    }
+    #playlistname{
+        margin-left: 50px;
+        padding-top: 80px;
+        font-size: 80px;
+        font-family: Poppins;
+        display: flex;
+        flex-direction: column;
+    }
+    #artistname{
+        font-size: 30px;
+        margin-top: 30px;
+        font-family: Poppins;
+    }
+    #tracks{
+        font-size: 25px;
+        font-family: poppins;
+        padding-right: 3px;
+        padding-top: 260px;
+    }
+    .ml{
+        height: auto;
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    .ml::-webkit-scrollbar{
+        width: 0px;
+    }
+    .musiclist{
+        list-style: none;
+        padding-top: 20px;
+    }
+    .musiclist li{
+        padding: 10px 20px;
+    }
+    .musiclist li:hover{
+        background-color: rgba(179, 179, 179, 0.189);
+    }
+}
+
+
+
+.bottom{
+    height:15vh;
+    position:fixed;
+    background-color:rgb(12, 9, 9);
+    bottom:0px;
+    color:white;
+    width:100%;
+}
+#time{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+#myProgressBar{
+    width:50vw;
+    cursor:pointer;
+    height: 5px;
+}
+#currentTime,
+#totalTime{
+    font-size: 13px;
+    padding: 0px 20px 0px 20px;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#prev,
+#next
+{
+    cursor: pointer;
+    font-size: 35px;
+    padding: 22px 18px;
+}
+#play{
+    cursor: pointer;
+    padding: 10px 0px; 
+    font-size: 55px;
+}
+#shuffle,
+#loop{
+    cursor: pointer;
+    font-size: 25px;
+    padding:28px 10px;
+}
+#shuffle:hover,
+#loop:hover,
+#prev:hover,
+#next:hover,
+#play:hover{
+    transform: scale(1.1, 1.1);
+    opacity: 0.8;
+}
+
+
+@media only screen and (min-width:1000px){
+    .bottom{
+        height:15vh;
+        position:fixed;
+        background-color:rgb(12, 9, 9);
+        bottom:0px;
+        color:white;
+        width:100%;
+    }
+    #time{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+    #myProgressBar{
+        width:50vw;
+        cursor:pointer;
+        height: 5px;
+    }
+    #currentTime,
+    #totalTime{
+        font-size: 15px;
+        padding: 0px 20px 0px 20px;
+    }
+    .icons{
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+    #prev,
+    #next
+    {
+        cursor: pointer;
+        font-size: 35px;
+        padding: 22px 18px;
+    }
+    #play{
+        cursor: pointer;
+        padding: 10px 0px; 
+        font-size: 55px;
+    }
+    #shuffle,
+    #loop{
+        cursor: pointer;
+        font-size: 25px;
+        padding:28px 10px;
+    }
+    #shuffle:hover,
+    #loop:hover,
+    #prev:hover,
+    #next:hover,
+    #play:hover{
+        transform: scale(1.1, 1.1);
+        opacity: 0.8;
+    }
+    
+} 

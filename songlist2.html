@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicplayer - Your Favourite music is here</title>
+    <link rel="stylesheet" href="songlist.css">
+</head>
+<body>
+    <div class="menu">
+        <i class="fa-solid fa-bars" id="menu"></i>
+    </div>
+    <div class="sidenav">
+        <i class="fa-solid fa-xmark" id="close"></i>
+        <img src="logo.jpg" alt="logo" id="logo">
+        <span class="sidebrand">
+            <a href="index.html">MusicPlayer</a>
+            </a>
+        </span>
+        <ul id="sidenavlist">
+            <li class="sidehome"><a href="index.html">Home</a></li>
+            <li class="sideabout"><a href="about.html">About-Us</a></li>
+        </ul>
+    </div>
+    <nav>
+        <ul>
+            <li class="brand">
+                <img src="logo.jpg" alt="logo">
+                <a href="index.html">MusicPlayer</a>
+                </a>
+            </li>
+            <li class="home"><a href="index.html">Home</a></li>
+            <li class="about"><a href="about.html">About-Us</a></li>
+        </ul>
+    </nav>
+    <div  class="leftcontainer"><p>Suggested Artists:<p>
+        <div class="songbox">
+            <a href="songlist6.html"> <img src="img/artists/justin.jpg" alt="Loading..." ></a>
+             <a href="songlist6.html" ><h5>Justin Bieber</h5></a>
+             <a href="songlist6.html" ><i class="fa-solid fa-2x fa-circle-play masterplay"></i></a>
+         </div>
+         <div class="songbox">
+            <a href="songlist8.html"> <img src="img/artists/Alan.png" alt="Loading..." ></a>
+             <a href="songlist8.html" ><h5>Alan Walker</h5></a>
+             <a href="songlist8.html" ><i class="fa-solid fa-2x fa-circle-play masterplay"></i></a>
+         </div>
+         <div class="songbox">
+            <a href="songlist3.html"> <img src="img/artists/weekend.jfif" alt="Loading..." ></a>
+             <a href="songlist3.html" ><h5>The Weeknd</h5></a>
+             <a href="songlist3.html" ><i class="fa-solid fa-2x fa-circle-play masterplay"></i></a>
+         </div>
+         <div class="songbox">
+            <a href="songlist2.html"> <img src="img/artists/zayn.jfif" alt="Loading..." ></a>
+             <a href="songlist2.html" ><h5>ZAYN</h5></a>
+             <a href="songlist2.html" ><i class="fa-solid fa-2x fa-circle-play masterplay"></i></a>
+         </div>
+         <div class="songbox">
+            <a href="songlist4.html"> <img src="img/artists/ap.jpg" alt="Loading..." ></a>
+             <a href="songlist4.html" ><h5>AP Dhillon</h5></a>
+             <a href="songlist4.html" ><i class="fa-solid fa-2x fa-circle-play masterplay"></i></a>
+         </div>
+         <div class="songbox">
+            <a href="songlist5.html"> <img src="img/artists/arijit.jfif" alt="Loading..." ></a>
+             <a href="songlist5.html" ><h5>Arijit Singh</h5></a>
+             <a href="songlist5.html" ><i class="fa-solid fa-2x fa-circle-play masterplay"></i></a>
+         </div>
+    </div>
+    <div class="container" >
+        <div class="musicid">
+            <img src="covers/icarusFalls.jpg" alt="cover img">
+            <span id="playlistname">Icarus Falls
+                <br>
+                <span id="artistname">ZAYN</span>
+            </span>
+        </div>
+        <span id="tracks">Tracks</span>
+        <div class="ml">
+            <ul class="musiclist">
+                <li>Let Me</li>
+                <li>Natural</li>
+                <li>back To Life</li>
+                <li>Common</li>
+                <li>Imprint</li>
+                <li>Stand Still</li>
+                <li>Tonight</li>
+                <li>Flight Of The Tars</li>
+                <li>If I Got You</li>
+                <li>Talk to Me</li>
+                <li>There You Are</li>
+                <li>I Dont Mind</li>
+                <li>Icarus InterLude</li>
+                <li>Good Guy</li>
+           </ul>
+        </div>  
+    </div>
+    <div class="bottom">
+        <div class="icons"  >
+            <i class="fa-solid fa-shuffle" id="shuffle" title="shuffle"></i>
+            <i class="fa-solid fa-backward-step" id="prev" title="previous"></i>
+            <i class="fa-solid fa-circle-play" id="play" title="play"></i>
+            <i class="fa-solid fa-forward-step" id="next" title="next"></i>
+            <i class="fa-solid fa-rotate-left" id="loop" title="repeat"></i>
+        </div>
+        <div id="time">
+            <div id="currentTime">00:00</div>
+            <input type="range" id="myProgressBar" value="0" min="0">
+            <div id="totalTime">0:00</div>
+        </div>
+    </div>
+<script src="https://kit.fontawesome.com/71a376e7c5.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
